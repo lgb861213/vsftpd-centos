@@ -24,6 +24,6 @@ RUN chmod +x /usr/sbin/run-vsftpd.sh && \
 VOLUME /home/www
 VOLUME /var/log/vsftpd
 
-EXPOSE 20 21 30001-30020
+EXPOSE 20 21 $PASV_MIN_PORT-$PASV_MAX_PORT
 
 CMD ["/usr/sbin/run-vsftpd.sh"]
